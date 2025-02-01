@@ -16,9 +16,9 @@ jobs:
         with:
           node-version: '22'
       - run: node server.js
-      - run: npm install
         env:
           FIREBASE_DETAILS: ${{ secrets.FIREBASE_DETAILS }}
+      - run: npm install
       - run: npm ci && npm run build
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
