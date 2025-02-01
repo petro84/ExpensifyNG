@@ -17,7 +17,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 'latest'
-      - run: nmp install
+      - run: npm install
       - run: npm ci && npm run build
         env:
           FIREBASE_CONFIG: ${{ secrets.FIREBASE_CONFIG }}
