@@ -7,6 +7,8 @@ permissions:
   checks: write
   contents: read
   pull-requests: write
+env:
+  FIREBASE_CONFIG: ${{ secrets.FIREBASE_CONFIG }}
 jobs:
   build_and_preview:
     if: ${{ github.event.pull_request.head.repo.full_name == github.repository }}
@@ -19,12 +21,9 @@ jobs:
           node-version: '22'
       - run: npm install
       - run: npm ci && npm run build
-        env:
-          FIREBASE_CONFIG: ${{ secrets.FIREBASE_CONFIG }}
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: ${{ secrets.GITHUB_TOKEN }}
           firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_NG_EXPENSIFY }}
           projectId: ng-expensify
-        env:
-          FIREBASE_CONFIG: ${{ secrets.FIREBASE_CONFIG }}
+
