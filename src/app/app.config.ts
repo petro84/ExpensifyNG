@@ -10,7 +10,7 @@ import { providePrimeNG } from 'primeng/config';
 
 import { routes } from './app.routes';
 import { LocationStrategy, PathLocationStrategy } from '@angular/common';
-import { environment } from '../environments/environment';
+import { environment } from '../environments/environment.development';
 import CustomTheme from './customeTheme';
 
 export const appConfig: ApplicationConfig = {
