@@ -1,1 +1,38 @@
-<p>expense-list works!</p>
+<div class="content-container">
+  <div class="overflow-hidden bg-[#f7f7f7] shadow-sm rounded-lg mb-8">
+    <div class="px-4 py-5 sm:p-6">
+      <p-table
+        [value]="expenses"
+        selectionMode="single"
+        [(selection)]="selectedExpense"
+        (onRowSelect)="editExpense()"
+      >
+        <ng-template #header>
+          <tr>
+            <th>Expense</th>
+            <th><div class="text-right">Amount</div></th>
+          </tr>
+        </ng-template>
+        <ng-template #body let-expense>
+          <tr [pSelectableRow]="expense">
+            <td class="mb-[1.2rem] md:mb-[3.2rem]">
+              <div class="flex items-center justify-start">
+                <div>
+                  <h3 class="m-0 break-all">{{ expense.description }}</h3>
+                  <div>
+                    <span>{{ expense.createdAt | date : "longDate" }}</span>
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td class="mb-[1.2rem] md:mb-[3.2rem]">
+              <div class="flex items-center justify-end">
+                <h3>{{ expense.amount / 100 | currency }}</h3>
+              </div>
+            </td>
+          </tr>
+        </ng-template>
+      </p-table>
+    </div>
+  </div>
+</div>
