@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  firebaseConfig: process.env['FIREBASE_CONFIG']
+  firebaseConfig: (JSON.parse(process.env['FIREBASE_CONFIG'] as string))
 };
