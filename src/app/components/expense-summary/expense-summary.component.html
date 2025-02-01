@@ -1,0 +1,11 @@
+<div class="bg-[#f7f7f7] mb-[3.2rem] py-[3.2rem]">
+  <div class="content-container">
+    <h1 class="font-light m-0">
+      Viewing <span>{{ numberOfExpenses }}</span> expenses totalling
+      <span class="font-bold">{{ totalAmount / 100 | currency }}</span>
+    </h1>
+    <div class="mt-[1.6rem]">
+      <p-button label="Add Expense" (onClick)="addExpense()"></p-button>
+    </div>
+  </div>
+</div>

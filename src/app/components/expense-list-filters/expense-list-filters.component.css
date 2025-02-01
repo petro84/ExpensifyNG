@@ -1,0 +1,5 @@
+@import "../../../styles";
+
+:host ::ng-deep input {
+  @apply text-[1.8rem] font-light p-[1.2rem] h-[48px];
+}

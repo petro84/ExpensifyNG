@@ -1,0 +1,24 @@
+@import "../../../styles";
+
+:host ::ng-deep input {
+  @apply text-[1.8rem] font-light p-[1.2rem] h-[48px];
+}
+
+:host ::ng-deep input::placeholder {
+  @apply font-bold;
+}
+
+:host ::ng-deep textarea {
+  @apply text-[1.8rem] font-light p-[1.2rem] mb-[1.2rem] md:mr-[1.2rem];
+}
+
+:host ::ng-deep button {
+  @apply focus:cursor-auto inline-block text-[1.8rem] font-light leading-none p-[1.2rem];
+}
+.remove-button ::ng-deep button {
+  @apply bg-[#888] border-none text-white;
+}
+:host ::ng-deep .p-inputtext:enabled:focus, .p-textarea:enabled:focus {
+  box-shadow: none;
+  border-color: initial;
+}

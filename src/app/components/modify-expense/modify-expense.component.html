@@ -1,0 +1,52 @@
+<form [formGroup]="expenseForm" (ngSubmit)="save(expenseForm.value)">
+  <div class="flex flex-col">
+    <input
+      type="text"
+      pInputText
+      placeholder="Description"
+      formControlName="description"
+      class="mb-[1.2rem] md:mr-[1.2rem]"
+    />
+    <p-inputnumber
+      mode="currency"
+      currency="USD"
+      placeholder="Amount"
+      formControlName="amount"
+      class="mb-[1.2rem] md:mr-[1.2rem]"
+    />
+    <p-datepicker
+      [readonlyInput]="true"
+      variant="filled"
+      showIcon
+      fluid="true"
+      formControlName="createdAt"
+      class="mb-[1.2rem] md:mr-[1.2rem]"
+    ></p-datepicker>
+    <textarea
+      rows="5"
+      cols="30"
+      pTextarea
+      placeholder="Add a note (Optional)"
+      formControlName="note"
+    ></textarea>
+  </div>
+  <div class="mt-3 flex justify-start">
+    <p-button
+      [disabled]="expenseForm.invalid"
+      type="submit"
+      severity="info"
+      class="save-button"
+      label="Save Expense"
+    ></p-button>
+  </div>
+  @if (isEdit) {
+  <div class="mt-3 flex justify-start">
+    <p-button
+      severity="secondary"
+      class="remove-button"
+      label="Remove Expense"
+      (onClick)="delete(expenseForm.value)"
+    ></p-button>
+  </div>
+  }
+</form>

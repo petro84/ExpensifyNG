@@ -1,0 +1,22 @@
+@import "../../../styles";
+
+.box-layout {
+  @apply items-center flex h-screen justify-center w-screen;
+  background: center / cover no-repeat url("../../../assets/images/bg.jpg");
+}
+
+.box-layout-box {
+  @apply bg-[#ffffffd9] py-[3.2rem] px-[1.6rem] text-center w-[25rem] rounded-[3px];
+}
+
+.box-layout-title {
+  @apply leading-4;
+}
+
+:host ::ng-deep button {
+  @apply focus:cursor-auto inline-block text-[1.8rem] font-light leading-none p-[1.2rem];
+}
+
+:host ::ng-deep p {
+  @apply block my-[1rem];
+}

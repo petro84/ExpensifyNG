@@ -1,0 +1,9 @@
+@import "../../../styles";
+
+h1 > span {
+  @apply font-bold;
+}
+
+:host ::ng-deep button {
+  @apply focus:cursor-auto inline-block text-[1.8rem] font-light leading-none p-[1.2rem];
+}
